@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ka" class="cover-loading">
+<html lang="ka" class="cover-loading cover-open">
   <head>
     <base href="../" />
     <meta charset="utf-8" />
@@ -11,6 +11,9 @@
     />
     <title>ლიზაზოს დაბადების დღე · პირადი მოსაწვევი</title>
     <style>
+html.cover-open{height:100%;overflow:hidden;overscroll-behavior:none}
+html.cover-open body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none}
+html.cover-open #site{display:none!important}
 html.cover-loading,html.cover-loading body{background:#641e18;margin:0}
 .cover-loader{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#641e18;color:#f4dfc4;text-align:center;font:13px sans-serif;padding:25px}
 .cover-loader-mark{font:42px Georgia,serif;animation:loader-breathe 1.4s ease-in-out infinite}
@@ -24,9 +27,9 @@ html.cover-loading #gate{visibility:hidden}html.cover-loading #gate *{animation-
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700&family=Noto+Serif+Georgian:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=cover-ready-4" />
+    <link rel="stylesheet" href="style.css?v=cover-mobile-5" />
     <script src="config.js" defer></script>
-    <script src="app.js?v=cover-ready-4" defer></script>
+    <script src="app.js?v=cover-mobile-5" defer></script>
   </head>
   <body>
     <div id="coverLoader" class="cover-loader" role="status" aria-live="polite"><span class="cover-loader-mark" aria-hidden="true">♡</span><span id="coverLoadingText">შენი მოსაწვევი მზადდება…</span><button id="coverRetry" type="button" hidden>სცადე ხელახლა</button></div>

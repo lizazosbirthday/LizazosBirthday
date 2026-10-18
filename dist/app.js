@@ -114,6 +114,7 @@ function openInvite(skip = false) {
   setTimeout(
     () => {
       $("#gate").hidden = true;
+      document.documentElement.classList.remove("cover-open");
       document.body.style.overflow = "";
       $("#title").tabIndex = -1;
       $("#title").focus({ preventScroll: true });
@@ -145,6 +146,7 @@ prepareCover().catch(()=>{
 $("#open").onclick = () => openInvite();
 
 $("#reopen").onclick = () => {
+  document.documentElement.classList.add("cover-open");
   $("#gate").hidden = false;
   document.body.style.overflow = "hidden";
   $("#gate").classList.remove("opening");
