@@ -4,7 +4,7 @@ window.INVITATION = {
   "boothPhotos": [
     {"src":"photos/booth-liza-1.jpg","alt":"ლიზა მანქანაში სათამაშოსთან ერთად","position":"65% 34%"},
     {"src":"photos/booth-liza-2.jpg","alt":"ლიზას სელფი მანქანაში","position":"60% 42%"},
-    {"src":"photos/booth-liza-3.jpg","alt":"ლიზა მწვანე კაბაში","position":"48% 37%"}
+    {"src":"photos/booth-liza-sea.jpg","alt":"ლიზა ზღვის სანაპიროზე","position":"42% 50%"}
   ],
   "coverTitle": "ლიზაზოს დაბადების დღე",
   "name": "ლიზა",
@@ -39,7 +39,7 @@ window.INVITATION = {
       "caption": "იგივე ლიზა, ახალი მოგონებები"
     }
   ],
-  "musicUrl": "",
+  "musicUrl": "audio/new-york-new-york.mp3",
   "guests": [
     {
       "id": "kostika",

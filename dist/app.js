@@ -286,20 +286,16 @@ $("#heroSurprise").onclick=()=>{
 if (c.musicUrl) {
   const audio = new Audio(c.musicUrl);
   audio.loop = true;
-  $("#music").hidden = false;
-  $("#music").onclick = async () => {
-    try {
-      if (audio.paused) {
-        await audio.play();
-        $("#music").textContent = "მუსიკის გამორთვა ♫";
-      } else {
-        audio.pause();
-        $("#music").textContent = "მუსიკის ჩართვა ♫";
-      }
-    } catch {
-      $("#music").textContent = "მუსიკა ვერ ჩაირთო — სცადე ხელახლა";
-    }
-  };
+  audio.autoplay = true;
+  audio.preload = 'auto';
+  const events = ['pointerdown', 'touchend', 'click', 'keydown'];
+  const cleanup = () => events.forEach(type => document.removeEventListener(type, startMusic, true));
+  function startMusic() {
+    if (!audio.paused) return;
+    audio.play().then(cleanup).catch(() => {});
+  }
+  events.forEach(type => document.addEventListener(type, startMusic, {capture:true,passive:true}));
+  startMusic();
 }
 const obs = new IntersectionObserver(
   (entries) =>
