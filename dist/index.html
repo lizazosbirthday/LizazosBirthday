@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ka" class="cover-loading">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f8f2e8" />
+    <meta
+      name="description"
+      content="ლიზაზოს დაბადების დღე — 23 ოქტომბერი, 20:00. ერთი განსაკუთრებული საღამო."
+    />
+    <title>ლიზაზოს დაბადების დღე · პირადი მოსაწვევი</title>
+    <style>
+html.cover-loading,html.cover-loading body{background:#641e18;margin:0}
+.cover-loader{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#641e18;color:#f4dfc4;text-align:center;font:13px sans-serif;padding:25px}
+.cover-loader-mark{font:42px Georgia,serif;animation:loader-breathe 1.4s ease-in-out infinite}
+.cover-loader button{color:#f4dfc4;background:transparent;border:1px solid #d7b7a1;padding:12px 20px;cursor:pointer}
+html.cover-loading #gate{visibility:hidden}html.cover-loading #gate *{animation-play-state:paused!important}html.cover-loading #site{visibility:hidden}
+@keyframes loader-breathe{50%{opacity:.4;transform:scale(.9)}}@media(prefers-reduced-motion:reduce){.cover-loader-mark{animation:none}}
+    </style>
+    <link rel="preload" as="image" href="photos/photobooth-steel.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700&family=Noto+Serif+Georgian:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=cover-ready-4" />
+    <script src="config.js" defer></script>
+    <script src="app.js?v=cover-ready-4" defer></script>
+  </head>
+  <body>
+    <div id="coverLoader" class="cover-loader" role="status" aria-live="polite"><span class="cover-loader-mark" aria-hidden="true">♡</span><span id="coverLoadingText">შენი მოსაწვევი მზადდება…</span><button id="coverRetry" type="button" hidden>სცადე ხელახლა</button></div>
+    <div id="gate" class="gate photobooth-gate">
+      <div class="gate-top">პირადი მოსაწვევი · მხოლოდ შენთვის</div>
+      <div class="booth-heading"><strong id="coverName">ლიზაზოს დაბადების დღე</strong><i>♡</i></div>
+      <div class="booth-machine" aria-label="ლიზას სამი მოგონება ფოტობუდის ზოლზე">
+        <div class="booth-screw screw-one" aria-hidden="true"></div><div class="booth-screw screw-two" aria-hidden="true"></div>
+        <div class="booth-recess"><div class="booth-slot" aria-hidden="true"></div>
+          <div class="paper-output"><div class="photostrip">
+            <img src="photos/booth-liza-1.jpg" alt="ლიზა მანქანაში სათამაშოსთან ერთად" />
+            <img src="photos/booth-liza-2.jpg" alt="ლიზას სელფი მანქანაში" />
+            <img src="photos/booth-liza-3.jpg" alt="ლიზა მწვანე კაბაში" />
+            <span class="strip-caption">მოგონებები გრძელდება ♡</span>
+          </div></div>
+        </div><div class="booth-label">ერთი საღამო · ბევრი მოგონება</div>
+      </div>
+      <h1>შენ მოწვეული ხარ</h1>
+      <button id="open" class="primary">შეეხე მოსაწვევის გასახსნელად <span>↗</span></button>
+      <div class="gate-bottom">პატარა წერილი. დიდი სიყვარულით. ♡</div>
+    </div>
+    <div id="site" inert aria-hidden="true">
+      <header>
+        <a href="#home" class="brand">ლ<span> / </span>23.10</a>
+        <nav aria-label="მთავარი ნავიგაცია">
+          <a href="#details">საღამოს შესახებ</a
+          ><a href="#personal">შენი მოსაწვევი ↗</a>
+        </nav>
+        <button
+          id="reopen"
+          class="text-button"
+          aria-label="კონვერტის ხელახლა გახსნა"
+        >
+          ✉
+        </button>
+      </header>
+      <main>
+        <section id="home" class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="little-star">✦</span> შენთვის შენახული ადგილი
+            </p>
+            <h1 id="title">ლიზაზოს<br />დაბადების დღე</h1>
+            <p id="intro" class="intro"></p>
+            <div class="hero-date">
+              <span class="day">23</span>
+              <div>ოქტომბერი, 2026<br /><span>პარასკევი · 20:00</span></div>
+            </div>
+            <button id="heroSurprise" class="primary" type="button" hidden>შენი სიურპრიზი ✨ <span>↗</span></button>
+            <div class="micro">
+              ერთი საღამო. თორმეტი ადამიანი. უამრავი მოგონება.
+            </div>
+          </div>
+          <div class="hero-art">
+ <span class="doodle star-one" aria-hidden="true">✧</span><span class="doodle star-two" aria-hidden="true">✧</span>
+ <svg class="bow bow-one" viewBox="0 0 120 110" aria-hidden="true"><path d="M60 40C20 0 0 40 60 40C120 0 130 40 60 40M58 42C38 65 60 80 28 106M62 42C82 66 62 80 90 105"/></svg>
+ <div class="portrait-frame"><img id="heroPhoto" src="photos/liza-1.jpg" alt="ლიზა ბავშვობაში, ბედნიერი ღიმილით" fetchpriority="high"><div class="party-hat" aria-hidden="true"></div></div>
+ <svg class="bow bow-two" viewBox="0 0 120 110" aria-hidden="true"><path d="M60 40C20 0 0 40 60 40C120 0 130 40 60 40M58 42C38 65 60 80 28 106M62 42C82 66 62 80 90 105"/></svg>
+ <span class="art-number">23 / 10</span>
+ </div>
+          <div class="hero-foot">
+            <span>თბილისი · საქართველო</span>
+          </div>
+        </section>
+        <div class="theme-bar">
+          <span>საღამოს განწყობა</span>
+          <div role="group" aria-label="ვიზუალური თემა">
+            <button data-theme="paper" aria-pressed="true">
+              <i></i>ქაღალდი</button
+            ><button data-theme="disco" aria-pressed="false">
+              <i></i>დისკო
+            </button>
+          </div>
+        </div>
+        <section class="count-section reveal">
+          <p class="eyebrow">ჩვენს შეხვედრამდე</p>
+          <h2>ცოტაც და, ერთად ვიქნებით.</h2>
+          <div
+            id="countdown"
+            class="countdown"
+            aria-label="ღონისძიებამდე დარჩენილი დრო"
+          ></div>
+          <p id="started" hidden>საღამო დაიწყო — გელოდებით! ✨</p>
+        </section>
+        <section id="details" class="details reveal">
+          <div>
+            <p class="eyebrow">01 / საღამოს დეტალები</p>
+            <h2>შეხვედრის<br />ადგილი და დრო.</h2>
+            <p class="muted">
+              კარგი განწყობა შენ მოიტანე.<br />დანარჩენი საღამოს მივანდოთ.
+            </p>
+          </div>
+          <div class="detail-list">
+            <article>
+              <span>როდის</span>
+              <div>
+                <h3>23 ოქტომბერი, 2026</h3>
+                <p>პარასკევი · 20:00 · თბილისის დროით</p>
+                <button id="calendar" class="inline-link">
+                  კალენდარში დამატება ↗
+                </button>
+              </div>
+            </article>
+            <article>
+              <span>სად</span>
+              <div>
+                <h3 id="venue"></h3>
+                <p id="address"></p>
+                <a
+                  id="map"
+                  class="inline-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >გახსენი რუკა ↗</a
+                >
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="memories reveal">
+          <div class="section-heading">
+            <div>
+              
+              <h2>პატარა ლიზა, დიდი ამბები.</h2>
+            </div>
+            <span class="handwritten">სულ ასეთივე ღიმილით ♡</span>
+          </div>
+          <div id="gallery" class="gallery">
+            <div class="photo photo-main">
+              <div class="flower">✳</div>
+              <span>აქ ლიზას ფოტო იქნება</span
+              ><small>ჩვენი საღამოს მთავარი ღიმილი</small>
+            </div>
+            <div class="photo photo-two">
+              <div class="abstract-heart">♡</div>
+              <span>პატარა ბედნიერებები</span
+              ><small>ადგილი თქვენი მოგონებისთვის</small>
+            </div>
+            <div class="photo photo-three">
+              <div class="sparkles">✧</div>
+              <span>ჩვენი საყვარელი მომენტები</span
+              ><small>ადგილი თქვენი მოგონებისთვის</small>
+            </div>
+          </div>
+          <p class="photo-caption">
+            დროებითი კომპოზიციები — მალე ჩვენი ფოტოებით შეივსება.
+          </p>
+        </section>
+        <section id="personal" class="rsvp reveal"><div><p class="eyebrow">03 / მხოლოდ შენთვის</p><h2>ერთი საღამო.<br>შენი მოსაწვევი.</h2><p id="message" class="muted"></p></div><div class="personal-card"><p id="personalGuest" class="personal-guest">ეს საღამო ჩვენს საყვარელ ადამიანებს ეკუთვნის.</p><p id="personalNote" class="muted">შენი სიურპრიზის სანახავად გახსენი პირადი ბმული.</p><button id="surprise" class="primary" hidden>გახსენი შენი სიურპრიზი ✨ <span>↗</span></button></div></section>
+      </main>
+      <footer>
+        <span>შექმნილია სიყვარულით, ლიზასთვის ♡</span
+        ><span>23 ოქტომბერი · თბილისი</span
+        ><button id="music" hidden>მუსიკის ჩართვა ♫</button>
+      </footer>
+    </div>
+    <div id="confetti" aria-hidden="true"></div>
+  </body>
+</html>
