@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>მოსაწვევის მართვა</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="admin.js" defer></script>
+    <style>
+      main {
+        padding: 40px 6%;
+        max-width: 1000px;
+      }
+      #login {
+        max-width: 500px;
+      }
+      .guest {
+        padding: 25px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .guest input,
+      .guest textarea {
+        margin-bottom: 10px;
+      }
+      .guest .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      #summary {
+        margin: 30px 0;
+        color: var(--muted);
+      }
+      #adminStatus {
+        min-height: 28px;
+      }
+      .response {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      #logout {
+        float: right;
+      }
+      .guest a {
+        overflow-wrap: anywhere;
+        font-size: 12px;
+        display: block;
+        margin: 14px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">მხოლოდ ორგანიზატორისთვის</p>
+      <h1>თორმეტი პირადი მოსაწვევი.</h1>
+      <p>
+        პასუხები ინახება ამ კომპიუტერზე, <code>data/guests.json</code> ფაილში.
+      </p>
+      <form id="login">
+        <label for="key">ორგანიზატორის გასაღები</label
+        ><input
+          type="password"
+          id="key"
+          required
+          autocomplete="off"
+          placeholder="data/admin-key.txt ფაილიდან"
+        /><button class="primary">შესვლა ↗</button>
+      </form>
+      <p id="adminStatus" role="status"></p>
+      <section id="dashboard" hidden>
+        <button id="logout" class="outline">გასვლა</button
+        ><label for="base">გასაზიარებელი HTTPS მისამართი</label
+        ><input
+          id="base"
+          type="url"
+          placeholder="https://შენი-მისამართი"
+        /><small
+          >ლოკალური მისამართები სხვა ქსელიდან არ იხსნება. აქ ჩასმული მისამართი
+          გამოიყენება სტუმრების ბმულებში.</small
+        >
+        <p id="summary"></p>
+        <button id="refresh" class="outline">პასუხების განახლება ↻</button>
+        <div id="guests"></div>
+      </section>
+    </main>
+  </body>
+</html>
