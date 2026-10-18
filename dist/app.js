@@ -143,7 +143,7 @@ prepareCover().catch(()=>{
  $('#coverLoadingText').textContent='ფოტოები ვერ ჩაიტვირთა. გადაამოწმე ინტერნეტი და სცადე ხელახლა.';
  $('#coverRetry').hidden=false;
 });
-$("#open").onclick = () => openInvite();
+$("#open").onclick = () => { startInvitationMusic(); openInvite(); };
 
 $("#reopen").onclick = () => {
   document.documentElement.classList.add("cover-open");
@@ -283,19 +283,10 @@ $("#heroSurprise").onclick=()=>{
  target.scrollIntoView({behavior:reduce?'instant':'smooth',block:'center'});
  target.focus({preventScroll:true});
 };
-if (c.musicUrl) {
-  const audio = new Audio(c.musicUrl);
-  audio.loop = true;
-  audio.autoplay = true;
-  audio.preload = 'auto';
-  const events = ['pointerdown', 'touchend', 'click', 'keydown'];
-  const cleanup = () => events.forEach(type => document.removeEventListener(type, startMusic, true));
-  function startMusic() {
-    if (!audio.paused) return;
-    audio.play().then(cleanup).catch(() => {});
-  }
-  events.forEach(type => document.addEventListener(type, startMusic, {capture:true,passive:true}));
-  startMusic();
+const invitationAudio = c.musicUrl ? new Audio(c.musicUrl) : null;
+if(invitationAudio){invitationAudio.loop=true;invitationAudio.preload='auto';}
+function startInvitationMusic(){
+ if(invitationAudio && invitationAudio.paused)invitationAudio.play().catch(()=>{});
 }
 const obs = new IntersectionObserver(
   (entries) =>
